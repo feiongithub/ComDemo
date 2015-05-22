@@ -77,5 +77,4 @@ IOuternal* WINAPI GetInstance(REFIID riid)
 }
 
 
-
 #endif
