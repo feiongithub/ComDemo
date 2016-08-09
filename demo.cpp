@@ -1,7 +1,6 @@
 // demo.cpp : 定义控制台应用程序的入口点。
 //
 
-#include "stdafx.h"
 
 #include <windows.h>
 #include <tchar.h>
@@ -16,6 +15,9 @@ int _tmain()
 	IOuternal* outer = GetInstance(IID_IOuternal);
 	printf("Before: %s\n",outer->GetName());
 
+
+    // 接下来是 dll 中的操作，操作实例
+    // 这里的例子是保存了一个字符串 abc
 	IInternal* inter = NULL;
 	if( S_OK == outer->QueryInterface(IID_IInternal,(PVOID*)&inter) )
 	{
@@ -23,6 +25,8 @@ int _tmain()
 		inter->Release();
 	}
 
+
+    // 外部使用者可以获取这个值
 	printf("After: %s\n",outer->GetName());
 	outer->Release();
 	return 0;
