@@ -17,6 +17,7 @@ public:
 
 
 // 实际应用的时候，IInternal可以放在内部使用，外部只使用IOuternal
+// 内部使用 IInternal 可以方便在内部传递实例,只需传递指针即可
 // {A6179295-960E-4D04-B3C1-C4B2A240CE17}
 static const GUID IID_IInternal = 
 { 0xa6179295, 0x960e, 0x4d04, { 0xb3, 0xc1, 0xc4, 0xb2, 0xa2, 0x40, 0xce, 0x17 } };
